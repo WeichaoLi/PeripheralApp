@@ -32,6 +32,8 @@
 #pragma mark - UI事件
 //创建外围设备
 - (IBAction)startClick:(UIBarButtonItem *)sender {
+    _peripheralManager = nil;
+    _log.text = nil;
     _peripheralManager=[[CBPeripheralManager alloc]initWithDelegate:self queue:nil];
 }
 //更新数据
