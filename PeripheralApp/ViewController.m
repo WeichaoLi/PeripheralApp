@@ -190,5 +190,9 @@
  */
 -(void)writeToLog:(NSString *)info{
     self.log.text=[NSString stringWithFormat:@"%@\r\n%@",self.log.text,info];
+    NSLog(@"%@", NSStringFromCGSize(self.log.contentSize));
+    NSLog(@"%@", NSStringFromCGPoint(self.log.contentOffset));
+    CGRect rect = CGRectMake(0, self.log.contentSize.height - 20, self.log.frame.size.width, self.log.frame.size.height);
+    [self.log scrollRectToVisible:rect animated:YES];
 }
 @end
